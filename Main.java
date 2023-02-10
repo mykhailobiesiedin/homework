@@ -5,7 +5,7 @@ public class Main {
 
     static double calculateArea(double diameter) {
         double radius = diameter / 2;
-        return radius * radius * PI;
+        return Math.pow(radius, 2) * PI;
     }
 
     static double calculatePizzaCalories(double diameter) {
