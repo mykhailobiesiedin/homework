@@ -1,26 +1,29 @@
-import java.util.Scanner;
+import static java.lang.Math.PI;
 
 public class Main {
+    static final double caloriesInSquareSmOfPizza = 10;
+
+    static double calculateArea(double diameter) {
+        double radius = diameter / 2;
+        return radius * radius * PI;
+    }
+
+    static double calculatePizzaCalories(double diameter) {
+        double res = calculateArea(diameter);
+        return res * caloriesInSquareSmOfPizza;
+    }
+
+    static void printResult(String calories, double amountCalories) {
+        System.out.println(calories + amountCalories);
+    }
+
     public static void main(String[] args) {
 
-        Scanner keyboard = new Scanner(System.in);
+        double firstPizza = calculatePizzaCalories(20.0);
+        double secondPizza = calculatePizzaCalories(25.0);
 
-        System.out.println("Choose a number :");
-        int arg1 = keyboard.nextInt(2);
-
-        System.out.println("Choose a second number :");
-        int arg2 = keyboard.nextInt(2);
-
-        int res = arg1 + arg2;
-
-        System.out.println("Your result :" + Integer.toBinaryString(arg1) + "+" +
-                Integer.toBinaryString(arg2) + "=" + res);
-        System.out.println("Your result :" + Integer.toBinaryString(arg1) + "+" +
-                Integer.toBinaryString(arg2) + "=" + Integer.toBinaryString(res));
-
-
-
-
-
+        printResult("First Pizza : ", firstPizza);
+        printResult("Second Pizza : ", secondPizza);
+        printResult("Pizza calories difference : ", secondPizza - firstPizza);
     }
 }
