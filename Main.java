@@ -1,29 +1,19 @@
-import static java.lang.Math.PI;
+import java.util.Scanner;
 
 public class Main {
-    static final double caloriesInSquareSmOfPizza = 10;
-
-    static double calculateArea(double diameter) {
-        double radius = diameter / 2;
-        return Math.pow(radius, 2) * PI;
-    }
-
-    static double calculatePizzaCalories(double diameter) {
-        double res = calculateArea(diameter);
-        return res * caloriesInSquareSmOfPizza;
-    }
-
-    static void printResult(String calories, double amountCalories) {
-        System.out.println(calories + amountCalories);
-    }
-
     public static void main(String[] args) {
 
-        double firstPizza = calculatePizzaCalories(20.0);
-        double secondPizza = calculatePizzaCalories(25.0);
+        Scanner dictionary = new Scanner(System.in);
+        System.out.println("Enter the word you would like to be translated : ");
+        String word = dictionary.next();
 
-        printResult("First Pizza : ", firstPizza);
-        printResult("Second Pizza : ", secondPizza);
-        printResult("Pizza calories difference : ", secondPizza - firstPizza);
+        switch (word) {
+            case "Window" -> System.out.println("Окно");
+            case "Table" -> System.out.println("Стол");
+            case "Chair" -> System.out.println("Стул");
+            case "Wardrobe" -> System.out.println("Гардероб");
+            case "Floor" -> System.out.println("Пол");
+            default -> System.out.println("The translation of word " + word + " is absent");
+        }
     }
 }
